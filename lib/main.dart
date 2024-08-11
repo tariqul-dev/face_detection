@@ -83,7 +83,7 @@ class _MainPageState extends State<MainPage> {
                          fit: BoxFit.contain,
                        ),
                        CustomPaint(
-                         painter: ContourPainter(imageSize, state.rectList),
+                         painter: ContourPainter(imageSize, state.faces),
 
                        ),
                      ],

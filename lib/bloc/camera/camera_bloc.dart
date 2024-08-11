@@ -17,11 +17,11 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
       (event, emit) async{
         if (event.image != null) {
 
-          final rectList = await doFaceDetect(event.image!);
+          final faces = await doFaceDetect(event.image!);
           final image = File(event.image!.path);
           var decodedImage = await decodeImageFromList(image.readAsBytesSync());
 
-          emit(GetImageState(image, decodedImage, rectList));
+          emit(GetImageState(image, decodedImage, faces));
         }
         else {
           print("Image not found");

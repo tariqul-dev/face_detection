@@ -11,12 +11,12 @@ final class CameraInitial extends CameraState {
 
 final class GetImageState extends CameraState {
   final File image;
-  final List<Face> rectList;
+  final List<Face> faces;
   final  decodedImage;
 
 
-  const GetImageState(this.image, this.decodedImage, this.rectList);
+  const GetImageState(this.image, this.decodedImage, this.faces);
 
   @override
-  List<Object?> get props => [image];
+  List<Object?> get props => [image, faces, decodedImage];
 }
